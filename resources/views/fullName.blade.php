@@ -1,1 +1,5 @@
-<h1>Ломянский Максим Эдуардович</h1>
+@extends('layouts.app')
+
+@section('content')
+    {!! $content !!}
+@endsection
