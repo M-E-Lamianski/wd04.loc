@@ -44,15 +44,3 @@ Route::delete('admin/articles/{id}/delete', [\App\Http\Controllers\Admin\Article
     ->name('admin.delete_article');
 
 
-Route::get('countries', [\App\Http\Controllers\CountriesController::class, 'index'])
-    ->name('countries.index');
-Route::get('countries/create', [\App\Http\Controllers\CountriesController::class, 'create'])
-    ->name('countries.create');
-Route::post('countries/store', [\App\Http\Controllers\CountriesController::class, 'store'])
-    ->name('countries.store');
-Route::get('counties/{id}/edit', [\App\Http\Controllers\CountriesController::class, 'edit'])
-    ->name('countries.edit');
-Route::put('countries/{id}/update', [\App\Http\Controllers\CountriesController::class, 'update'])
-    ->name('countries.update');
-Route::delete('countries/{id}/delete', [\App\Http\Controllers\CountriesController::class, 'delete'])
-    ->name('countries.delete');
