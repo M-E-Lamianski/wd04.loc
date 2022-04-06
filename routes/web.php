@@ -43,4 +43,8 @@ Route::put('admin/articles/{id}/update', [\App\Http\Controllers\Admin\ArticleCon
 Route::delete('admin/articles/{id}/delete', [\App\Http\Controllers\Admin\ArticleController::class, 'delete'])
     ->name('admin.delete_article');
 
+Route::prefix('admin')->name('admin.')->group(function (){
 
+    Route::resource('countries', \App\Http\Controllers\Admin\CountriesController::class)
+        ->except(['show']);
+});
