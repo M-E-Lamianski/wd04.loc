@@ -1,4 +1,3 @@
-
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -32,19 +31,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         $(function () {
             $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
-
             if (!screenfull.enabled) {
                 return false;
             }
-
-
-
             $('#toggle').click(function () {
                 screenfull.toggle($('#container')[0]);
             });
-
-
-
         });
     </script>
 
@@ -221,7 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </nav>
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="content-main">
-                @yield('content')
+            @yield('content')
             <div class="copy">
                 <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
             </div>
@@ -237,4 +229,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//scrolling js-->
 </body>
 </html>
-

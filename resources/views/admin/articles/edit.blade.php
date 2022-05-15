@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label >Содержание</label>
-                    <textarea name="content" cols="30" rows="10" class="form-control">{{$article->content}}</textarea>
+                    <textarea> name="content" cols="30" rows="10" class="form-control">{{$article->content}}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-default">Submit</button>

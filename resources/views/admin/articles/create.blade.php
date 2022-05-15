@@ -4,7 +4,7 @@
     <div class="grid-form">
         <div class="grid-form1">
             <h3 id="forms-example" class="">Добавление статьи</h3>
-            <form action="{{ route('admin.store_article') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.storage_article') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label >Название</label>

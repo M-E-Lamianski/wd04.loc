@@ -31,20 +31,22 @@ Route::get('fullName', [\App\Http\Controllers\MyController::class, 'myPage']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('admin', [\App\Http\Controllers\Admin\AdminController::class, 'dashboard']);
-Route::get('admin/articles', [\App\Http\Controllers\Admin\ArticleController::class, 'index']);
-Route::get('admin/articles/create', [\App\Http\Controllers\Admin\ArticleController::class, 'create']);
-Route::post('admin/articles/store', [\App\Http\Controllers\Admin\ArticleController::class, 'store'])
-    ->name('admin.store_article');
-Route::get('admin/articles/{id}/edit', [\App\Http\Controllers\Admin\ArticleController::class, 'edit'])
-    ->name('admin.edit_article');
-Route::put('admin/articles/{id}/update', [\App\Http\Controllers\Admin\ArticleController::class, 'update'])
-    ->name('admin.update_article');
-Route::delete('admin/articles/{id}/delete', [\App\Http\Controllers\Admin\ArticleController::class, 'delete'])
-    ->name('admin.delete_article');
 
-Route::prefix('admin')->name('admin.')->group(function (){
 
-    Route::resource('countries', \App\Http\Controllers\Admin\CountriesController::class)
-        ->except(['show']);
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'dashboard']);
+
+    Route::get('articles', [App\Http\Controllers\Admin\ArticleController::class, 'index'])->name('article.index');
+    Route::get('articles/create', [App\Http\Controllers\Admin\ArticleController::class, 'create']);
+    Route::post('articles/storage', [App\Http\Controllers\Admin\ArticleController::class, 'storage'])->name('storage_article');
+    Route::get('articles/edit/{id}', [App\Http\Controllers\Admin\ArticleController::class, 'edit'])->name('edit_article');
+    Route::put('articles/update/{id}', [App\Http\Controllers\Admin\ArticleController::class, 'update'])->name('update_article');
+    Route::delete('articles/delete/{id}', [App\Http\Controllers\Admin\ArticleController::class, 'delete'])->name('delete_article');
+
+    Route::resource('country', \App\Http\Controllers\Admin\CountryController::class)->except(['show']);
 });
+
+//Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class)->except(['show']);
+
+
