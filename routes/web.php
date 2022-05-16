@@ -50,3 +50,5 @@ Route::prefix('admin')->name('admin.')->group(function(){
 //Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class)->except(['show']);
 
 
+Route::get('converter', [App\Http\Controllers\Api\ConverterController::class, 'index']);
+Route::post('converter/result', [App\Http\Controllers\Api\ConverterController::class, 'convert'])->name('converter.result');
